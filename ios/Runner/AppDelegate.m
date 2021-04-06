@@ -14,7 +14,11 @@
       // Note: this method is invoked on the UI thread.
       if ([@"getBatteryLevel" isEqualToString:call.method]) {
           
-          result(@"Native code ios dayyyy.");
+          NSString* textFromDart = call.arguments[@"textDart"];
+          NSString* textFromIOS = @"Text from iOS Native.";
+          NSString* str = [NSString stringWithFormat: @" Dart send to Ios: (%@) \n Ios send to Dart: (%@)", textFromDart, textFromIOS];
+
+          result(str);
 
           // result([FlutterError errorWithCode:@"UNAVAILABLE"
           //                     message:@"Battery info not available."

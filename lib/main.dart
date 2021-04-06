@@ -33,7 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _getBatteryLevel() async {
     String batteryLevel;
     try {
-      final result = await platform.invokeMethod('getBatteryLevel');
+      final result = await platform.invokeMethod(
+        'getBatteryLevel',
+        {
+          'textDart': 'Text from Dart.',
+        },
+      );
       batteryLevel = '$result';
     } on PlatformException catch (e) {
       batteryLevel = "Failed to: '${e.message}'.";
