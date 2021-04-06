@@ -15,6 +15,10 @@
       if ([@"getBatteryLevel" isEqualToString:call.method]) {
           
           result(@"Native code ios dayyyy.");
+
+          // result([FlutterError errorWithCode:@"UNAVAILABLE"
+          //                     message:@"Battery info not available."
+          //                     details:nil]);
             
       } else {
         result(FlutterMethodNotImplemented);
